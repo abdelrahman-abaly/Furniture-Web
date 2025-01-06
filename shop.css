@@ -27,13 +27,28 @@
     width: 370px;
     background-color:white;
 }
-.imageHeader  p{
+/* for the animation */
+.imageHeader p, .imageHeader .back ,
+.detailsContainer .imgPart,
+.detailsContainer .detailsPart,
+.descrtionHeader,.descrtionHeader p,.anotherDesginContainer,
+.productContainer .product{
+    opacity: 0;
+    visibility: hidden;
+}
+.imageHeader p {
     position: absolute;
     font-size: 3rem;
+    animation: appear 1s ease-in-out forwards; 
+    animation-delay: 0s;
+    visibility: visible; 
 }
-.imageHeader .back{
+.imageHeader .back {
     position: absolute;
     top: 60%; 
+    animation: appear 1s ease-in-out forwards;
+    animation-delay: 0.4s;
+    visibility: visible; 
 }
 .imageHeader .back a{
     text-decoration: none;
@@ -75,6 +90,9 @@
     width: 25%;
     margin-bottom: 5%;
     line-height: 1.3;
+    animation: appear 1s ease-in-out forwards; 
+    animation-delay: 0s;
+    visibility: visible;
 }
 .productContainer .product a {
     text-decoration: none;
@@ -160,6 +178,9 @@ color: #555252;
     width: 90%; 
     margin: auto; 
     margin-bottom: 3%;
+    animation: appear 1s ease-in-out forwards; 
+    animation-delay: 0s;
+    visibility: visible;
 }
 .anotherDesginContainer .leftSide{
     width: 30%;  
@@ -208,12 +229,16 @@ color: #555252;
 }
 .detailsContainer .imgPart {
     position: relative;
+    animation: appear 1s ease-in-out forwards; 
+    animation-delay: 0s;
+    visibility: visible; 
 }
 /* the style of dialog */
 .detailsContainer .imgPart .dialog{
      width: 30%;
      margin: auto;
      border: none; 
+    
 }
 .detailsContainer .imgPart .dialog::backdrop {
     background:rgb(85, 85, 85);
@@ -246,6 +271,9 @@ color: #555252;
 .detailsContainer .detailsPart {
   padding-left: 3%;
   line-height: 2;
+  animation: appear 1s ease-in-out forwards; 
+  animation-delay: .4s;
+  visibility: visible; 
 }
 .detailsContainer .detailsPart .title{
    font-size: 2rem;
@@ -312,6 +340,9 @@ width: 50%;
        text-align: center;
         margin-top: 4%; 
         margin-bottom: 4%;
+        animation: appear 1s ease-in-out forwards; 
+        animation-delay: .3s;
+        visibility: visible; 
 }
 .descrtionHeader .desInfoHeader{
     padding-top: 1%;
@@ -330,6 +361,9 @@ width: 50%;
 .descrtionHeader p{
     padding-top: 3%;
      color: #535353;
+     animation: appear 1s ease-in-out forwards; 
+     animation-delay: .2s;
+     visibility: visible; 
 }
 .descrtionHeader table{
         width: 100%; 
@@ -363,4 +397,74 @@ width: 50%;
 .descrtionHeader .reviewContent .rightSide{
     width: 90%;
      margin-left: 3%;
+}
+/* .anotherDesginContainer .leftSide a img{
+    width: 100%;
+    height: 100%;
+} */
+/* .descrtionHeader .reviewContent .leftSide img{
+   width: 100%;
+} */
+/* .detailsContainer .detailsPart .buttons button:hover{
+  
+background-color: #e97730;
+color: white;
+transition: .4s;
+transition-timing-function: ease-in-out;
+} */
+/* .descrtionHeader .review i{
+    color: #e97730;
+} */
+/* .detailsContainer .detailsPart .iconsPart button:hover{
+
+background-color: #e97730;
+color: white;
+transition: .4s;
+transition-timing-function: ease-in-out;
+} */
+/* .detailsContainer .detailsPart .rating .stars{
+    color:#e97730;
+} */
+/* 
+.detailsContainer .detailsPart .colorName{
+   font-size: 1.3rem;
+} */
+
+/* .detailsContainer .imgPart button:hover{
+
+    background-color: #e97730;
+    color: white;
+    transition: .4s;
+} */
+/* .anotherDesginContainer .rightSide .buttons button:hover{
+    background-color: #e97730;
+    color: white;
+    transition: .4s;
+    transition-timing-function: ease-in-out;
+} */
+/* .productContainer .product .imageHover .hoverContent .addCard p:hover{
+    background-color: #e97730;
+    transition: .4s;
+    transition-timing-function: ease-in-out;
+} */
+/* .productContainer .product a p:hover{
+    color: #e97730;
+    transition: .4s;
+    text-decoration: none;
+} */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(90px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+.block{
+
+    animation: appear linear;
+    animation-timeline:view() ;
+    animation-range: entry 0% cover 40%;
 }

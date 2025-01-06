@@ -27,8 +27,8 @@
  <!-- this will be the paret  <div class="details"> -->
 <div class="details" id="details">
 
-<!--     
-    <div class="detailsContainer">
+    
+    <!-- <div class="detailsContainer">
 
         <div class="imgPart">
             <button onclick="dialog.showModal()"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -142,28 +142,126 @@
 </div>
  <div class="rightSide">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur pariatur, esse vel voluptatibus deleniti hic consectetur velit quos, unde accusamus placeat nesciunt perferendis incidunt eos, illum sint doloribus. Consequuntur, quaerat?</div>
       </div>
-    </div>    -->
- 
+    </div>   
+    <h1 style="font-size: 40px; text-align: center; margin-top: 2%;margin-bottom: 3%;">Related product</h1>
+ <div  class="relatedproduct">
+    <div class="product">
+        <div class="imageHover" >
+          <img src="./images/product-2.png" alt="" >
+                  <div class="hoverContent" >
+                    <div class="icons">
+                                
+                        <a href="#"><button ><i class="fa-regular fa-heart"></i></button></a>
+                        <a href="./details.html?id=${i.id}">
+                             <button ><i class="fa-regular fa-eye"></i></button></a></div>
+            <div class="addCard" >
+           <a href="#">
+          <p >
+            <i class="fa-solid fa-cart-shopping"></i> add to card</p>
+          </a>
+            </div>
+            </div>
+         </div>
+      </a>
+                <div class="underImage">
+               <a href="#">  
+                 <p>the name of product</p>
+                </a>
+                  <span class="before">26.56%</span><span class="after">50%</span>
+                </div>
+              </div>
+
+              <div class="product">
+                <div class="imageHover" >
+                  <img src="./images/product-2.png" alt="" >
+                          <div class="hoverContent" >
+                            <div class="icons">
+                                
+                                <a href="#"><button ><i class="fa-regular fa-heart"></i></button></a>
+                                <a href="./details.html?id=${i.id}">
+                                     <button ><i class="fa-regular fa-eye"></i></button></a></div>
+                    <div class="addCard" >
+                     
+                   <a href="#">
+                  <p >
+                    <i class="fa-solid fa-cart-shopping"></i> add to card</p>
+                  </a>
+                    </div>
+                    </div>
+                 </div>
+              </a>
+                        <div class="underImage">
+                       <a href="#">  
+                         <p>the name of product</p>
+                        </a>
+                          <span class="before">26.56%</span><span class="after">50%</span>
+                        </div>
+                      </div>
+                      <div class="product">
+                        <div class="imageHover" >
+                          <img src="./images/product-2.png" alt="" >
+                                  <div class="hoverContent" >
+                                    <div class="icons">
+                                
+                                        <a href="#"><button ><i class="fa-regular fa-heart"></i></button></a>
+                                        <a href="./details.html?id=${i.id}">
+                                             <button ><i class="fa-regular fa-eye"></i></button></a></div>
+                            <div class="addCard" >
+                             
+                           <a href="#">
+                          <p >
+                            <i class="fa-solid fa-cart-shopping"></i> add to card</p>
+                          </a>
+                            </div>
+                            </div>
+                         </div>
+                      </a>
+                                <div class="underImage">
+                               <a href="#">  
+                                 <p>the name of product</p>
+                                </a>
+                                  <span class="before">26.56%</span><span class="after">50%</span>
+                                </div>
+                              </div>  
+                               <div class="product">
+                                <div class="imageHover" >
+                                  <img src="./images/product-2.png" alt="" >
+                                          <div class="hoverContent" >
+                                            <div class="icons">
+                                
+                                                <a href="#"><button ><i class="fa-regular fa-heart"></i></button></a>
+                                                <a href="./details.html?id=${i.id}">
+                                                     <button ><i class="fa-regular fa-eye"></i></button></a></div>
+                                    <div class="addCard" >
+                                     
+                                   <a href="#">
+                                  <p >
+                                    <i class="fa-solid fa-cart-shopping"></i> add to card</p>
+                                  </a>
+                                    </div>
+                                    </div>
+                                 </div>
+                              </a>
+                                        <div class="underImage">
+                                       <a href="#">  
+                                         <p>the name of product</p>
+                                        </a>
+                                          <span class="before">26.56%</span><span class="after">50%</span>
+                                        </div>
+                                      </div>
 
 
+</div> -->
 
 </div>       
 <script>
-
-
-
-    
 console.log(window.location.search);
-
-
-
 var params = window.location.search.substring(1).split('&'); 
 console.log(params)
 var id = params[0].split('=')[1];
 console.log(id);
-
-
 var parent = document.getElementById("details");
+
 //  var descriptionbutton=document.getElementById("Descriptipn");
 //  var informationbutton=document.getElementById("information");
 //  var changeContent=document.getElementById("changeContent");
@@ -172,13 +270,10 @@ var parent = document.getElementById("details");
 // console.log(changeContent)
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "./shop.json", true);
-
 xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
         var data = xhr.response;
         var dataAfterParse = JSON.parse(data);
-
-        
         var details = dataAfterParse.find(i => i.id == id);
 
     console.log(details);
@@ -253,11 +348,6 @@ xhr.onreadystatechange = function() {
 </div>
 </div>
 
-
-
-
-
-
 </div>
 
 
@@ -272,31 +362,11 @@ xhr.onreadystatechange = function() {
 </div>
 <div id="changeContent">
   <p >${details.description}.</p>
-<!--
-<table >
-<tr>
-    <td class="leftSide">Brands</td>
-    <td class="rightSide">	${details.brand}</td>
-</tr>
-<tr>
-    <td class="leftSide">Color</td>
-    <td class="rightSide">${details.color}</td>
-</tr>
-<tr>
-    <td class="leftSide">Size</td>
-    <td class="rightSide">${details.dimensions}</td>
-</tr>
 
-</table>
--->
+
+
   </div>
-
-
-
 </div>   
-
-
-
             `;
 
             var descriptionbutton=document.getElementById("Descriptipn");
@@ -371,22 +441,63 @@ xhr.onreadystatechange = function() {
 `;
 
             })
-            
+
+    
       
     }
 };
-
-
 xhr.send();
-
-
-
-
-
-
-
 </script>
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  

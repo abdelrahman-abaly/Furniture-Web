@@ -19,6 +19,7 @@ xhr.onreadystatechange = function () {
             
             var div = document.createElement("div");
             div.classList.add("product");
+            
             div.innerHTML = `
             <div class="imageHover" >
             <img src="${i.image_path}" alt="" >
@@ -57,6 +58,8 @@ xhr.onreadystatechange = function () {
             for (let i of dataAfterParse) {
                 var div = document.createElement("div");
                 div.classList.add("product");
+              
+
                 div.innerHTML = `
                 <div class="imageHover" >
                 <img src="${i.image_path}" alt="" >
