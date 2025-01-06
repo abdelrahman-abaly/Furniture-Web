@@ -277,7 +277,7 @@ xhr.onreadystatechange = function() {
         var details = dataAfterParse.find(i => i.id == id);
 
     console.log(details);
-        
+
         parent.innerHTML = `
                     
     
@@ -360,8 +360,8 @@ xhr.onreadystatechange = function() {
 
 
 </div>
-<div id="changeContent">
-  <p >${details.description}.</p>
+<div id="changeContent" >
+  <p class="desp">${details.description}.</p>
 
 
 
@@ -369,7 +369,7 @@ xhr.onreadystatechange = function() {
 </div>   
             `;
 
-            var descriptionbutton=document.getElementById("Descriptipn");
+                   var descriptionbutton=document.getElementById("Descriptipn");
                     var informationbutton=document.getElementById("information");
                     var changeContent=document.getElementById("changeContent");
                     var review=document.getElementById("review");
@@ -386,7 +386,7 @@ xhr.onreadystatechange = function() {
                 changeContent.innerHTML="";
                 changeContent.innerHTML=`
 
-                <p >${details.description}.</p>
+                <p>${details.description}.</p>
 
 
 `;
@@ -442,7 +442,29 @@ xhr.onreadystatechange = function() {
 
             })
 
-    
+    // for the animation of the page 
+            let parant1=document.querySelector(".details");
+        let productimg=document.querySelector(".imgPart");
+        let productdetail=document.querySelector(".detailsPart");
+        let desinfoHeader=document.querySelector(".descrtionHeader");
+        let descriptionp=document.querySelector(".desp");
+        window.onscroll=function() {
+          if(window.scrollY >= parant1.offsetTop-150){
+              console.log("ddddd");
+              productimg.style.animation=" appear .7s ease-in-out  forwards "
+              productimg.style.visibility=" visible"
+              
+              productdetail.style.animation="appear .7s ease-in-out .4s forwards "
+              productdetail.style.visibility="visible"
+
+              desinfoHeader.style.animation="appear .7s ease-in-out .9s forwards "
+              desinfoHeader.style.visibility="visible"
+
+              descriptionp.style.animation="appear .7s ease-in-out 1s forwards "
+              descriptionp.style.visibility="visible"
+
+          }
+        }
       
     }
 };
