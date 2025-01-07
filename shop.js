@@ -28,13 +28,14 @@ xhr.onreadystatechange = function () {
                                 
         <a href="#"><button ><i class="fa-regular fa-heart"></i></button></a>
         <a href="./details.html?id=${i.id}">
-             <button ><i class="fa-regular fa-eye"></i></button></a></div>
+             <button ><i class="fa-regular fa-eye"></i></button></a>
+             </div>
               <div class="addCard" >
                 <!-- for you febe -->
-             <a href="#">
+            <button id="btn">
             <p >
               <i class="fa-solid fa-cart-shopping"></i> add to card</p>
-            </a>
+              </button>
               </div>
               </div>
            </div>
@@ -70,11 +71,12 @@ xhr.onreadystatechange = function () {
                         <a href="./details.html?id=${i.id}">
                              <button ><i class="fa-regular fa-eye"></i></button></a></div>
                   <div class="addCard" >
+                  
                     <!-- for you febe -->
-                 <a href="#">
-                <p >
-                  <i class="fa-solid fa-cart-shopping"></i> add to card</p>
-                </a>
+                    <button id="btn">
+                    <p >
+                      <i class="fa-solid fa-cart-shopping"></i> add to card</p>
+                      </button>
                   </div>
                   </div>
                </div>
@@ -122,7 +124,7 @@ xhr.onreadystatechange = function () {
                         
       <div class="buttons" >
 
-      <button title="add to card" ><i class="fa-solid fa-cart-shopping"></i></button>
+      <button title="add to card" id="btn"><i class="fa-solid fa-cart-shopping"></i></button>
  
       <button title="wishlist" ><i class="fa-regular fa-heart"></i></button>
  

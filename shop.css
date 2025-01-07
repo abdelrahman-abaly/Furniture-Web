@@ -131,7 +131,7 @@
 .productContainer .product .imageHover .hoverContent .icons{
    width: 100%;
 }
-.productContainer .product .imageHover a button{
+.productContainer .product .imageHover .hoverContent .icons a button{
 padding: 5%;
  margin: 0 3% 0 3%;
  border-radius: 25%;
@@ -141,21 +141,22 @@ color: #555252;
  border: none;
  font-size: 18px;
 }
-.productContainer .product .imageHover .hoverContent .addCard p{
+.productContainer .product .imageHover .hoverContent .addCard button p{
     position: absolute;
     bottom: 0;
     background-color: black;
     color: white;
     width: 100%;
     left: 0;
-    text-align: center;
     padding: 5%;
+    font-size: 18px;
+    cursor: pointer;
 }
-.productContainer .product .imageHover .hoverContent button:hover
-,.productContainer .product .imageHover .hoverContent .addCard p:hover,
+.productContainer .product .imageHover .hoverContent .addCard button p:hover,
 .anotherDesginContainer .rightSide .buttons button:hover,
 .detailsContainer .imgPart button:hover,
-.detailsContainer .detailsPart .iconsPart button:hover{
+.detailsContainer .detailsPart .iconsPart button:hover,
+.productContainer .product .imageHover .hoverContent .icons a button:hover{
     color: white;
     background-color: #e97730;
     transition: .4s;
