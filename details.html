@@ -253,7 +253,8 @@
 
 </div> -->
 
-</div>       
+</div> 
+<button id="scrollToTop" class="scrollToTop"><i class="fa-solid fa-angle-up"></i></button>      
 <script>
 console.log(window.location.search);
 var params = window.location.search.substring(1).split('&'); 
@@ -469,6 +470,26 @@ xhr.onreadystatechange = function() {
     }
 };
 xhr.send();
+
+const scrollToTop = document.getElementById("scrollToTop");
+
+
+window.addEventListener("scroll", () => {
+  
+    if (window.scrollY > 300) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+});
+
+
+scrollToTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
 </script>
     
 
