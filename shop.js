@@ -145,19 +145,19 @@ xhr.send();
 
 // 
 
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+const scrollToTop = document.getElementById("scrollToTop");
 
 
 window.addEventListener("scroll", () => {
 
     if (window.scrollY > 300) {
-        scrollToTopBtn.style.display = "block";
+        scrollToTop.style.display = "block";
     } else {
-        scrollToTopBtn.style.display = "none";
+        scrollToTop.style.display = "none";
     }
 });
 
-scrollToTopBtn.addEventListener("click", () => {
+scrollToTop.addEventListener("click", () => {
     window.scrollTo({
         top: 0,
         behavior: "smooth"
