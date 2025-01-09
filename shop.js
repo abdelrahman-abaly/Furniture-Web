@@ -32,7 +32,7 @@ xhr.onreadystatechange = function () {
              </div>
               <div class="addCard" >
                 <!-- for you febe -->
-            <button id="btn">
+            <button class="save-btn" data-id="${i.id}">
             <p >
               <i class="fa-solid fa-cart-shopping"></i> add to card</p>
               </button>
@@ -47,10 +47,28 @@ xhr.onreadystatechange = function () {
                     <span class="before">26.56%</span><span class="after">${i.price}$</span>
                   </div>
             `;
-            parent.appendChild(div);
-        }
 
-      
+            
+            parent.appendChild(div);
+        
+// the animation for the default design when i scroll
+       let parent1 = document.querySelector(".productContainer");
+            const products = document.querySelectorAll(".product");
+            
+            window.onscroll = function () {
+                if (window.scrollY >= parent1.offsetTop - 150) {
+                    console.log("ddd");
+                    for (let i = 0; i < products.length; i++) {
+                        products[i].style.animation = "appear 1s ease-in-out forwards";
+                        products[i].style.visibility = "visible";
+                    }
+                }
+            };
+            
+
+        }
+          
+    //   the event for the first design
         firstbutton.addEventListener("click", function () {
             this.style = "background-color: transparent; border: 1px solid black;";
             secondbutton.style = "none";
@@ -73,7 +91,7 @@ xhr.onreadystatechange = function () {
                   <div class="addCard" >
                   
                     <!-- for you febe -->
-                    <button id="btn">
+                    <button class="save-btn" data-id="${i.id}">
                     <p >
                       <i class="fa-solid fa-cart-shopping"></i> add to card</p>
                       </button>
@@ -89,9 +107,20 @@ xhr.onreadystatechange = function () {
                       </div>
                 `;
                 parent.appendChild(div);
+
+                // the animation first button
+
+                let parent1 = document.querySelector(".productContainer");
+                const products = document.querySelectorAll(".product");
+                 for (let i = 0; i < products.length; i++) {
+                            products[i].style.animation = "appear 1s ease-in-out forwards";
+                            products[i].style.visibility = "visible";
+                        }
+                 
+
             }
         });
-
+    //   the event for the second design
         secondbutton.addEventListener("click", function () {
             this.style = "background-color: transparent; border: 1px solid black;";
             firstbutton.style = "none";
@@ -124,7 +153,7 @@ xhr.onreadystatechange = function () {
                         
       <div class="buttons" >
 
-      <button title="add to card" id="btn"><i class="fa-solid fa-cart-shopping"></i></button>
+      <button title="add to card" class="save-btn" data-id="${i.id}"><i class="fa-solid fa-cart-shopping"></i></button>
  
       <button title="wishlist" ><i class="fa-regular fa-heart"></i></button>
  
@@ -134,8 +163,24 @@ xhr.onreadystatechange = function () {
                     </div>
                 `;
                 parent.appendChild(div);
+                // its animation in css file
             }
         });
+// the febe part 
+        var buttons = document.querySelectorAll('.save-btn');
+                buttons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        
+                        var productId = this.getAttribute('data-id');
+                        var savedIds = JSON.parse(localStorage.getItem('savedProductIds')) || [] ;
+                        if (!savedIds.includes(productId)) {
+                            savedIds.push(productId); 
+                            localStorage.setItem('savedProductIds', JSON.stringify(savedIds));
+                        
+                        } 
+                    });
+                });
+     
         
     }
 };
@@ -143,7 +188,7 @@ xhr.onreadystatechange = function () {
 xhr.send();
 
 
-// 
+// the button to the top
 
 const scrollToTop = document.getElementById("scrollToTop");
 
